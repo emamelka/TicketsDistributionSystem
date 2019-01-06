@@ -1,32 +1,64 @@
 package pl.emamelka.ticketsDistributionSystem.model;
 
-public class Ticket{
+import pl.emamelka.ticketsDistributionSystem.utils.Direction;
 
-    private String direction;
+import java.util.Objects;
+
+public class Ticket {
+
+    private int id;
+    private Direction direction;
     private int price;
 
-    public Ticket(){
-
+    public Ticket() {
     }
 
-    public Ticket(String direction, int price){
+    public Ticket(Direction direction, int price) {
         this.direction = direction;
         this.price = price;
     }
 
-    public String getDirection() {
-        return direction;
+    public int getId() {
+        return id;
     }
 
-    public void setDirection(String direction) {
-        this.direction = direction;
+    public Direction getDirection() {
+        return direction;
     }
 
     public int getPrice() {
         return price;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ticket ticket = (Ticket) o;
+        return id == ticket.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                '}';
     }
 }
