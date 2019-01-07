@@ -23,5 +23,11 @@ public class TicketRepo {
         return ticket;
     }
 
+    public boolean deleteTicket(int id){
+        tickets.remove(id);
+        return tickets.get(id) == null;
+    }
+
+
 
 }

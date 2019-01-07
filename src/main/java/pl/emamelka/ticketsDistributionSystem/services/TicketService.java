@@ -16,4 +16,12 @@ public class TicketService {
     public Ticket createTicket(){
         return ticketRepo.createTicket(new Ticket(Direction.UP, 10));
     }
+
+    public boolean deleteTicket(int id){
+        return ticketRepo.deleteTicket(id);
+    }
+
+    public Ticket getTicket(int id){
+        return ticketRepo.getTicket(id);
+    }
 }
