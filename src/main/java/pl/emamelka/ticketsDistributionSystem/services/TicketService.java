@@ -24,4 +24,8 @@ public class TicketService {
     public Ticket getTicket(int id){
         return ticketRepo.getTicket(id);
     }
+
+    public Ticket updateTicket(Ticket ticket) {
+        return ticketRepo.updateTicket(ticket);
+    }
 }

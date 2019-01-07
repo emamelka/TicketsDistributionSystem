@@ -29,5 +29,8 @@ public class TicketRepo {
     }
 
 
-
+    public Ticket updateTicket(Ticket ticket) {
+        tickets.put(ticket.getId(),ticket);
+        return ticket;
+    }
 }
