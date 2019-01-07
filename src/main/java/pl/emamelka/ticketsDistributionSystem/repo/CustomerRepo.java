@@ -23,4 +23,14 @@ public class CustomerRepo {
 
         return customer;
     }
+
+    public boolean deleteCustomer(int id) {
+        customers.remove(id);
+        return customers.get(id) == null;
+    }
+
+    public Customer updateCustomer(Customer customer) {
+        customers.put(customer.getId(), customer);
+        return customer;
+    }
 }

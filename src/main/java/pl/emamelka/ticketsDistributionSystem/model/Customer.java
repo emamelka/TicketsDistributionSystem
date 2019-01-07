@@ -10,6 +10,8 @@ public class Customer {
     private String name;
     private Set<Ticket> tickets = new HashSet<>();
 
+    public Customer(){}
+
     public Customer(String name) {
         this.name = name;
     }

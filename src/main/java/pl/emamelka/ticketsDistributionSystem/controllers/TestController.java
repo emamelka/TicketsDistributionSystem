@@ -8,6 +8,7 @@ import pl.emamelka.ticketsDistributionSystem.model.Ticket;
 import pl.emamelka.ticketsDistributionSystem.services.CustomerService;
 import pl.emamelka.ticketsDistributionSystem.services.TicketService;
 
+import javax.print.attribute.standard.Media;
 import javax.websocket.server.PathParam;
 
 @RestController
@@ -40,14 +41,29 @@ public class TestController {
         return ticketService.deleteTicket(id);
     }
 
+    @DeleteMapping(value = "/customer/{id}")
+    public boolean deleteCustomer(@PathVariable("id") Integer id){
+        return customerService.deleteCustomer(id);
+    }
+
     @GetMapping(value = "/ticket/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Ticket getTicket(@PathVariable("id") Integer id){
         return ticketService.getTicket(id);
     }
 
+    @GetMapping(value = "customer/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Customer getCustomer(@PathVariable("id") Integer id){
+        return customerService.getCustomer(id);
+    }
+
     @PutMapping(value = "/ticket", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Ticket updateTicket(@RequestBody Ticket ticket){
         return ticketService.updateTicket(ticket);
+    }
+
+    @PutMapping(value = "/customer", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Customer updateCustomer(@RequestBody Customer customer){
+        return customerService.updateCustomer(customer);
     }
 
 }

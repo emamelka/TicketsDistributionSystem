@@ -15,4 +15,16 @@ public class CustomerService {
     public Customer createCustomer(){
         return customerRepo.createCustomer(new Customer("customer"));
     }
+
+    public boolean deleteCustomer(int id) {
+        return customerRepo.deleteCustomer(id);
+    }
+
+    public Customer getCustomer(int id) {
+        return customerRepo.getCustomer(id);
+    }
+
+    public Customer updateCustomer(Customer customer) {
+        return customerRepo.updateCustomer(customer);
+    }
 }
